@@ -1,0 +1,4 @@
+SpeechRecognition
+sounddevice
+numpy
+openai
