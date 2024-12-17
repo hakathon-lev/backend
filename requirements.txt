@@ -2,3 +2,4 @@ SpeechRecognition
 sounddevice
 numpy
 openai
+sumy
