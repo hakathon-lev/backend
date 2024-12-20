@@ -3,6 +3,7 @@ import sounddevice as sd
 import numpy as np
 import sys
 import send_data_to_gpt
+import compare_to_other_cases
 
 
 # Set console to UTF-8 mode for Hebrew text
@@ -38,6 +39,9 @@ def main():
     print("Speech-to-Text for Hebrew")
     audio = record_audio()
     transcribed_audio = transcribe_audio(audio)
+    response = send_data_to_gpt.chat_with_gpt(transcribed_audio)
+    print(f"ChatGPT says:\n{response}")                             # just for testing
+    compare_to_other_cases.compare(response)
 
 
 if __name__ == "__main__":
