@@ -2,6 +2,8 @@ import speech_recognition as sr
 import sounddevice as sd
 import numpy as np
 import sys
+import send_data_to_gpt
+
 
 # Set console to UTF-8 mode for Hebrew text
 sys.stdout.reconfigure(encoding='utf-8')
@@ -24,7 +26,6 @@ def transcribe_audio(audio, samplerate=44100, language="he-IL"):
     try:
         print("Processing audio...")
         text = recognizer.recognize_google(audio_source, language=language)
-        print("You said:", text)
         return text
     except sr.UnknownValueError:
         print("Sorry, I could not understand the audio.")
@@ -32,6 +33,12 @@ def transcribe_audio(audio, samplerate=44100, language="he-IL"):
     except sr.RequestError as e:
         print(f"Could not request results; {e}")
         return None
+    
+def main():
+    print("Speech-to-Text for Hebrew")
+    audio = record_audio()
+    transcribed_audio = transcribe_audio(audio)
+
 
 if __name__ == "__main__":
     print("Speech-to-Text for Hebrew")
