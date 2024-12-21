@@ -1,5 +1,5 @@
 
-hebrew_words = [
+hebrew_keywords = [
     "מס משימה",
     "מס ניידת",
     "תאריך",
@@ -28,5 +28,5 @@ CHATGPT_REQUIREMENTS = f"""
 You are a text processor.I will provide you with a Hebrew text and a list of hebrew keywords.
 Your task is to extract the values corresponding to these keywords and return a valid JSON object.
 hebrew keywords:
-{hebrew_words}                                                                     
+{hebrew_keywords}                                                                     
 """
