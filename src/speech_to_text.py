@@ -2,8 +2,8 @@ import speech_recognition as sr
 import sounddevice as sd
 import numpy as np
 import sys
-import send_data_to_gpt
-import compare_to_other_cases
+import backend.src.send_data_to_gpt as send_data_to_gpt
+import backend.src.compare_to_other_cases as compare_to_other_cases
 import json
 
 

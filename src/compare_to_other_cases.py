@@ -1,7 +1,7 @@
 import json
 import pymongo
 from pymongo import MongoClient
-from config import json_format
+from backend.src.config import json_format
 
 def extract_required_fields(json_format):
     required_fields = []
