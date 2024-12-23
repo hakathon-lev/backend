@@ -1,9 +1,10 @@
 import os
 import google.generativeai as genai
 import config
-# from dotenv import find_dotenv, load_dotenv
-# env = find_dotenv()
-# load_dotenv(dotenv_path=env)
+from dotenv import find_dotenv, load_dotenv
+
+env = find_dotenv()
+load_dotenv(dotenv_path=env)
 
 
 def get_gimini_response(text):
@@ -35,4 +36,4 @@ def get_gimini_response(text):
 
 #just for testing
 if __name__ == "__main__":
-    get_gimini_response("what is the meaning of life?")
+    get_gimini_response("שלום לך איך קוראים לך יוסי כהן טוב יוסי תעודת הזהות שלך בבקשה 123456789 תודה מה קרה כאן יוסי רכב פגע בך כשחצית את הכביש הבנתי בן כמה אתה 39 זאת אומרת נולדת ב1 בינואר 1985 תודה אתה מבוטח בקופת חולים כללית נכון אוקיי תגיד לי איפה כואב לך עכשיו ברגל ימין ובחזה אני רואה שיש חבלה ברגל וכנראה שבר אני גם רואה סימני חבלה בצד ימין של החזה מה הכתובת שלך רחוב החרוב 12 תל אביב ומה מספר הטלפון שלך 0501234567 אל תדאג אנחנו עוצרים את הדימום עכשיו עם תחבושת לחץ ומקבעים את הרגל אני שם לך חמצן בסדר זה יעזור לך עם הנשימה תישאר רגוע אנחנו מסיימים כאן ומיד נפנה אותך לבית החולים להמשך טיפול")
