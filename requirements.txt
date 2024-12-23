@@ -6,4 +6,3 @@ sumy
 pymongo
 python-dotenv
 google.generativeai
-absl-py
