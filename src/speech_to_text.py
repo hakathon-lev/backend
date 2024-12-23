@@ -36,26 +36,27 @@ def transcribe_audio(audio, samplerate=44100, language="he-IL"):
         print(f"Could not request results; {e}")
         return None
     
-def is_button_pressed():
-    #TODO: Implement button press detection
-    return True  # Placeholder for actual button press detection
+# def is_button_pressed():
+#     #TODO: Implement button press detection
+#     return True  # Placeholder for actual button press detection
     
-def main():
-    our_json = {}
+# def main():
+#     our_json = {}
     
-    while is_button_pressed():
-        print("Speech-to-Text for Hebrew")
-        audio = record_audio()
-        transcribed_audio = transcribe_audio(audio)
-        response = send_data_to_gpt.chat_with_gpt(transcribed_audio)
-        json_response = json.loads(response)
-        for key, value in json_response.items():                        #items is a method that returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.
-            if key not in our_json:
-                our_json[key] = value
-        print(f"ChatGPT says:\n{response}")                             # just for testing
-        compare_to_other_cases.compare(our_json)
+#     while is_button_pressed():
+#         print("Speech-to-Text for Hebrew")
+#         audio = record_audio()
+#         transcribed_audio = transcribe_audio(audio)
+#         response = send_data_to_gpt.chat_with_gpt(transcribed_audio)
+#         json_response = json.loads(response)
+#         for key, value in json_response.items():                        #items is a method that returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.
+#             if key not in our_json:
+#                 our_json[key] = value
+#         print(f"ChatGPT says:\n{response}")                             # just for testing
+#         compare_to_other_cases.compare(our_json)
     
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    pass
