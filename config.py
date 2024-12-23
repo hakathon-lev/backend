@@ -138,3 +138,15 @@ hebrew keywords:
 fill this json object with the values you find in the user input text:
 {json_format}
 """
+
+
+GEMINI_REQUIREMENTS = f"""
+You are a text processor.I will provide you with a Hebrew text and a list of hebrew keywords.
+Your task is to extract the values corresponding to these keywords and return a valid JSON object.
+hebrew keywords:
+{hebrew_keywords}
+fill this json object with the values you find in the user input text:
+{json_format}
+
+text:
+"""
