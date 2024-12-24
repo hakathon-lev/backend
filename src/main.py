@@ -36,7 +36,7 @@ def main():
             if key not in our_json:
                 our_json[key] = value
         print(f"ChatGPT says:\n{response}")                             # just for testing
-        suggestion = compare_to_db.searchSimilar(patient_collection,our_json)
+        suggestion = compare_to_db.findSuggestions(patient_collection,our_json)
     return suggestion,our_json
 
 
