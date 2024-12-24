@@ -232,10 +232,8 @@ fill this json object with the values you find in the user input text:
 
 
 GEMINI_REQUIREMENTS = f"""
-You are a text processor.I will provide you with a Hebrew text and a list of hebrew keywords.
+You are a text processor.I will provide you with a Hebrew text and a json format.
 Your task is to extract the values corresponding to these keywords and return a valid JSON object.
-hebrew keywords:
-{hebrew_keywords}
 fill this json object with the values you find in the user input text and according to the case codes:
 {json_format}
 here the case codes:
