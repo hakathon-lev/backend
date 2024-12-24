@@ -60,7 +60,7 @@ def missingTreatmentsByProtocol(medical_case):
     diagnosis_code = medical_case.get("פירוט המקרה").get("קוד אירוע")
     
     if diagnosis_code not in protocols:
-        raise ValueError(f"Diagnosis code {diagnosis_code} not found in protocols.")
+        return {}
     
     protocol = protocols[diagnosis_code]
     
@@ -103,7 +103,10 @@ def findSuggestions(patient_collection,medical_case):
             suggestions[key]=suggestion1[key]+suggestion2[key]
         else:
             suggestions[key]=suggestion2[key]
-    return(suggestions)
+    suggestions_text=""
+    for key in suggestions:
+        suggestions_text=suggestions_text+key+":"+str(','.join(suggestions[key]))+"\n"
+    return(suggestions_text)
 
 
 if __name__ == "__main__":

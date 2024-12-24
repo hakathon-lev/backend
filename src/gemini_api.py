@@ -49,10 +49,13 @@ def main():
     response = get_gimini_response("אנחנו נמצאים ברחוב הירקון 45 בתל אביב הגענו לטפל בדוד כהן גבר בן 58 שהתמוטט ברחוב ללא הכרה התחלנו מיד עיסויי לב באיכות גבוהה חיברנו דפיברילטור שזיהה פרפור חדרים ונתנו שוק חשמלי ראשון המשכנו בהחייאה ובהמשך ניתן 1 מג אדרנלין תוך ורידי מה שהוביל לחזרת דופק סדיר המטופל עדיין מונשם עם מפוח ומתחיל להגיב קלות מדדנו לחץ דם 100 70 וסטורציה 94 עם חמצן פינינו את המטופל לאמבולנס ובדרך לבית החולים המשכנו במעקב מתן חמצן ושמירה על יציבותו תוך עדכון הצוות הקרדיולוגי שממתין לנו במיון")
     print(response)
     json_response = json.loads(response[8:-4])
-    suggestion = compare_to_db.findSuggestions(patient_collection,json_response)
     print(json_response)
-    print("******************************************************")
-    print(suggestion)
+    if not json_response["פירוט המקרה"]["קוד אירוע"]=="null":
+        suggestion = compare_to_db.findSuggestions(patient_collection,json_response)
+        print("******************************************************")
+        print(suggestion)
+    
+    
 
 #just for testing
 if __name__ == "__main__":
