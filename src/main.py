@@ -26,13 +26,13 @@ def main(our_json):
 
     response_gemini = gemini_api.get_gimini_response(transcribed_audio)    #this is for gemini
 
-    response = send_data_to_gpt.chat_with_gpt(transcribed_audio)    #this is for chatgpt
+    # response = send_data_to_gpt.chat_with_gpt(transcribed_audio)    #this is for chatgpt
 
-    json_response = json.loads(response)
+    json_response = json.loads(response_gemini)
     for key, value in json_response.items():                        #items is a method that returns a view object. The view object contains the key-value pairs of the dictionary, as tuples in a list.
         if key not in our_json:
             our_json[key] = value
-    print(f"ChatGPT says:\n{response}")                             # just for testing
+    print(f"ChatGPT says:\n{response_gemini}")                             # just for testing
     suggestion = compare_to_db.findSuggestions(patient_collection,our_json)
     return suggestion,our_json
 
