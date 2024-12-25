@@ -6,3 +6,4 @@ sumy
 pymongo
 python-dotenv
 google.generativeai
+python-ffmpeg

@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 import json
-import config
+import our_protocol
 
 def searchSimilar(patient_collection,current_case):
 
@@ -55,7 +55,7 @@ def searchSimilar(patient_collection,current_case):
 def missingTreatmentsByProtocol(medical_case):
     # with open("protocol.json", "r", encoding="utf-8") as file:
     #     protocols = json.load(file)
-    protocols = json.loads(config.protocol)
+    protocols = json.loads(our_protocol.PROTOCOL)
 
     diagnosis_code = medical_case.get("פירוט המקרה").get("קוד אירוע")
     

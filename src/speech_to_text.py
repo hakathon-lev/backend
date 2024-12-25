@@ -5,6 +5,7 @@ import sys
 import backend.src.send_data_to_gpt as send_data_to_gpt
 import backend.src.compare_to_other_cases as compare_to_other_cases
 import json
+import ffmpeg
 
 
 # Set console to UTF-8 mode for Hebrew text
@@ -35,6 +36,17 @@ def transcribe_audio(audio, samplerate=44100, language="he-IL"):
     except sr.RequestError as e:
         print(f"Could not request results; {e}")
         return None
+    
+def convert_to_pcm(file_path, output_sample_rate=44100):
+    # Use ffmpeg to extract PCM raw data
+    process = (
+        ffmpeg.input(file_path)
+        .output('pipe:', format='s16le', acodec='pcm_s16le', ac=1, ar=output_sample_rate)
+        .run(capture_stdout=True, capture_stderr=True)
+    )
+    raw_audio = process[0]  # Captured stdout is the raw audio
+    pcm_data = np.frombuffer(raw_audio, dtype=np.int16)
+    return pcm_data, output_sample_rate
     
 # def is_button_pressed():
 #     #TODO: Implement button press detection
